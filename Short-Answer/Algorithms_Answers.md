@@ -12,3 +12,18 @@ c)O(n)
 Explanation: This function is recursive thus dependent on n. The bigger n, the more time it will run until it reaches 0.
 
 ## Exercise II
+
+Have: n-story building and plenty of eggs.
+
+Egg gets broken if thrown off floor f or higher, and doesn't get broken if dropped off a floor less than floor f.
+
+Devise a strategy to determine: the value of f
+such that the number of dropped + broken eggs is minimized.
+
+## Proposed algorithm in plain English or pseudocode:
+
+I would take a binary search approach. In order to do a binary search, your data has to be sorted but since floors in a building are sorted, I would not have to worry about sorting them first. I can start in the middle most floor of the building or (n/2, n being the number of floors in the building) and drop an egg. If the egg breaks, I can focus on the bottom half of the building. If it does not, I can focus on the floors above. This plan should minimize the number of eggs I drop and number of broken eggs.
+
+## AND give the runtime complexity of your solution:
+
+My solution is a binary search, which has a runtime complexity of O(log n). It increases by a constant, if n doubles the runtime increases by constant that is smaller than n.
